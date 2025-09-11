@@ -1,0 +1,48 @@
+/* applies border-box to entire site */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* removes the default focus on individual items */
+*:focus {
+    outline: none;
+}
+
+/* color applied when user highlights text on a page */ 
+/* adapted from HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+::selection {
+    color: #fff;
+    background: #143D5D;
+    text-shadow: none;
+}
+
+/* styles for entire site */
+:root {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    line-height: 1.875rem;
+    color: #212119;
+}
+
+/* main container for html pages */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    background-color: #fff;
+}
+
+/* main container for body of html pages */
+body {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1366px;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* align header and main content to left */
+header,
+main {
+    text-align: left;
+}
