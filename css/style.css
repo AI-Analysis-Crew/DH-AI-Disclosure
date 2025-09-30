@@ -1,3 +1,21 @@
+/* ========================================
+   COLOR PALETTE REFERENCE
+   From: color-combo-maker-design.png
+   ======================================== */
+/*
+   - Cyan: #00FFFF
+   - Teal: #008B8B
+   - Dark Teal: #2F4F4F
+   - Light Gray: #F5F5F5
+   - Medium Gray: #A9A9A9
+   - Black: #000000
+
+   Current Site Colors in Use:
+   - Primary Brand: #143D5D (dark blue - used for links, focus, selection)
+   - Text: #212119 (dark gray-brown)
+   - Background: #fff (white)
+*/
+
 /* applies border-box to entire site */
 *, *::before, *::after {
     box-sizing: border-box;
