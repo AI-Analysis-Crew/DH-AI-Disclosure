@@ -7,20 +7,71 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="robots" content="index, follow"/>
 		<!--<meta name="theme-color" content=""/>-->
+		<!-- Open Graph meta tags -->
+		<meta property="og:type" content="website"/>
+		<meta property="og:title" content="Disclosing Generative AI Use in Digital Humanities Research"/>
+		<meta property="og:description" content="Survey study investigating how digital humanists perceive and approach generative AI disclosure in research. Empirical guidance for scholars, institutional leaders, funders, and stakeholders."/>
+		<meta property="og:url" content="https://dh-ai-disclosure.github.io/"/>
+		<meta property="og:site_name" content="DH AI Disclosure"/>
+		<meta property="og:locale" content="en_US"/>
+		<!-- Twitter Card meta tags -->
+		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:title" content="Disclosing Generative AI Use in Digital Humanities Research"/>
+		<meta name="twitter:description" content="Survey study investigating how digital humanists perceive and approach generative AI disclosure in research."/>
 		<!--<link rel="icon" type="image/png" sizes="16x16" href=""/>-->
 		<!--<link rel="icon" type="image/png" sizes="32x32" href=""/>-->
 		<!--<link rel="apple-touch-icon" sizes="180x180" href=""/>-->
 		<!--<link rel="manifest" href="/site.webmanifest"/>-->
+		<!-- Preload critical resources -->
+		<link rel="preload" href="/css/style.css?vers=001" as="style"/>
 		<link rel="preconnect" href="https://fonts.googleapis.com"/>
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap"/>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:!?()'&quot;-"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" type="text/css" href="/css/style.css?vers=001"/>
 	</head>
 
 	<body>
+		<!-- JSON-LD Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "ScholarlyArticle",
+			"name": "Disclosing Generative AI Use in Digital Humanities Research",
+			"description": "This survey study investigates how digital humanists perceive and approach generative AI (GenAI) disclosure in research. The results indicate that while digital humanities scholars acknowledge the importance of disclosing GenAI use, the actual rate of disclosure in research practice remains low.",
+			"url": "https://dh-ai-disclosure.github.io/",
+			"inLanguage": "en",
+			"about": {
+				"@type": "Thing",
+				"name": "Generative AI Disclosure in Digital Humanities"
+			},
+			"author": [
+				{
+					"@type": "Person",
+					"name": "Rongqian Ma",
+					"email": "rm56@iu.edu"
+				},
+				{
+					"@type": "Person",
+					"name": "Xuhan Zhang",
+					"email": "xuhanzhang@missouri.edu"
+				},
+				{
+					"@type": "Person",
+					"name": "Adrian S. Wisnicki",
+					"email": "awisnicki@yahoo.com"
+				}
+			],
+			"keywords": ["digital humanities", "generative AI", "artificial intelligence", "research disclosure", "AI ethics", "academic integrity"],
+			"accessMode": ["textual"],
+			"accessModeSufficient": ["textual"],
+			"accessibilityFeature": ["structuralNavigation", "readingOrder"],
+			"accessibilityHazard": "none"
+		}
+		</script>
 		<a href="#main" class="skip-link">Skip to main content</a>
-		<div data-include="nav"></div>
+		<!-- <div data-include="nav"></div> -->
 
 		<header id="header">
 			<!--add header content here-->
@@ -31,38 +82,58 @@
 				<h1 id="introduction">Disclosing Generative AI Use in Digital Humanities Research</h1>
 				<section aria-labelledby="note">
 					<h2 id="note">Note for Site Visitors</h2>
-					<p>Please fill out <a aria-label="external link" href="https://docs.google.com/forms/d/e/1FAIpQLSdU4gVCMtFkVy6wuM5AC_5h4k8bjWE5WQflGMy1mHAy-ISTRw/viewform?usp=header">this form</a>, if you'd like to be added to our notification list. This site is currently under development, and we will be publishing the alpha, beta, and final versions in the coming months.</p>
+					<p>Please fill out <a aria-label="Google Forms notification signup (opens in new tab)" href="https://docs.google.com/forms/d/e/1FAIpQLSdU4gVCMtFkVy6wuM5AC_5h4k8bjWE5WQflGMy1mHAy-ISTRw/viewform?usp=header" target="_blank" rel="noopener noreferrer">this form</a>, if you'd like to be added to our notification list. This site is currently under development, and we will be publishing the alpha, beta, and final versions in the coming months.</p>
 				</section>
-				<section aria-labelledby="about-the-project">
-					<h2 id="about-the-project">About the Project</h2>
-					<p>This website provides information about disclosing the use of generative artificial intelligence (GenAI) in digital humanities research. It includes guidelines, best practices, and resources for researchers and institutions to ensure transparency and ethical use of GenAI technologies.</p>
+				<section aria-labelledby="survey">
+					<h2 id="survey">Survey</h2>
+					<p class="center">Please visit and complete <a aria-label="Qualtrics survey on GenAI disclosure (opens in new tab)" href="https://illinois.qualtrics.com/jfe/form/SV_82PdV7rZEqH8J02" target="_blank" rel="noopener noreferrer">our survey</a>!</p>
 				</section>
-				<section aria-labelledby="data-collection">
-					<h2 id="data-collection">Data Collection</h2>
-					<p>The data used in this project was collected from various sources, including academic publications, surveys, and interviews with digital humanities researchers. The data is analyzed to understand current practices and attitudes towards GenAI use and disclosure.</p>
+				<section aria-labelledby="abstract">
+					<h2 id="abstract">Abstract</h2>
+					<p>This survey study investigates how digital humanists perceive and approach generative AI (GenAI) disclosure in research. The results indicate that while digital humanities scholars acknowledge the importance of disclosing GenAI use, the actual rate of disclosure in research practice remains low. Respondents differ in their views on which activities most require disclosure and on the most appropriate methods for doing so. Most also believe that safeguards for AI disclosure should be established through institutional policies rather than left to individual decisions. The study’s findings will offer empirical guidance to scholars, institutional leaders, funders, and other stakeholders responsible for shaping effective disclosure policies.</p>
 				</section>
-				<section aria-labelledby="contact-information">
+				<section aria-labelledby="findings">
+					<h2 id="findings">Findings</h2>
+					<p>The survey study reveals a shared recognition of the importance of disclosing GenAI use, but divergent views on how such disclosure should be integrated into research practices.</p>
+				</section>
+					<section aria-labelledby="contact-information">
 					<h2 id="contact-information">Contact Information</h2>
-					<p>For more information about this project or to get involved, please contact us at <a href="mailto:info@example.com">info@example.com</a>.</p>
-				</section>
-				<section aria-labelledby="acknowledgments">
-					<h2 id="acknowledgments">Acknowledgments</h2>
-					<p>We would like to thank all the researchers and institutions that contributed to this project. Your insights and support have been invaluable.</p>
+					<p>For more information about this project or to get involved, please contact us:</p>
+					<ul>
+						<li>Rongqian Ma (<a href="mailto:rm56@iu.edu">rm56@iu.edu</a>)</li>
+						<li>Xuhan Zhang (<a href="mailto:xuhanzhang@missouri.edu">xuhanzhang@missouri.edu</a>)</li>
+						<li>Adrian S. Wisnicki (<a href="mailto:awisnicki@yahoo.com">awisnicki@yahoo.com</a>)</li>
+					</ul>
 				</section>
 			</section>
 		</main>
 
-		<div data-include="footer"></div>
+		<!-- <div data-include="footer"></div> -->
 
 		<!-- Scroll to top button; adapted from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp -->
 		<!--<button onclick="topFunction()" ontouchend="topFunction()" id="topButton" aria-label="Scroll to top" tabindex="0">Top</button>-->
 
-		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 		<script>
-			// Includes HTML snippets; adapted from https://stackoverflow.com/a/31837264
-			$(function(){var includes=$('[data-include]');jQuery.each(includes,function(){var file='/common/'+$(this).data('include')+'.html?vers=001';$(this).load(file)})});
-			// Loads JS file only after rest of page has loaded; adapted from https://learn.jquery.com/using-jquery-core/document-ready/ and https://stackoverflow.com/a/39179486, then improved with ChatGPT (https://chat.openai.com/chat)
-			$(document).ready(function(){loadScript("/js/scripts.js?vers=001")});function loadScript(src){var script=document.createElement("script");script.src=src;document.body.appendChild(script)}
+			// Includes HTML snippets; vanilla JavaScript implementation
+			document.addEventListener('DOMContentLoaded', function() {
+				var includes = document.querySelectorAll('[data-include]');
+				includes.forEach(function(element) {
+					var file = '/common/' + element.getAttribute('data-include') + '.html?vers=001';
+					fetch(file)
+						.then(response => response.text())
+						.then(data => element.innerHTML = data)
+						.catch(error => console.error('Error loading include:', error));
+				});
+
+				// Load scripts.js after DOM is ready
+				loadScript('/js/scripts.js?vers=001');
+			});
+
+			function loadScript(src) {
+				var script = document.createElement('script');
+				script.src = src;
+				document.body.appendChild(script);
+			}
 		</script>
 	</body>
 </html>
