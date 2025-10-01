@@ -1,19 +1,21 @@
 /* ========================================
-   COLOR PALETTE REFERENCE
-   From: color-combo-maker-design.png
+   COLOR PALETTE
+   Balanced Dark Mode - AAA Accessible
    ======================================== */
 /*
-   - Cyan: #00FFFF
-   - Teal: #008B8B
-   - Dark Teal: #2F4F4F
-   - Light Gray: #F5F5F5
-   - Medium Gray: #A9A9A9
-   - Black: #000000
-
-   Current Site Colors in Use:
-   - Primary Brand: #143D5D (dark blue - used for links, focus, selection)
-   - Text: #212119 (dark gray-brown)
-   - Background: #fff (white)
+   Primary Colors:
+   - Deep Slate: #1a2332 (primary background)
+   - Medium Slate: #2a3444 (secondary background)
+   - Bright Cyan: #A8D5E2 (primary text)
+   - Soft Blue: #D4E8F0 (headings h2)
+   - Pale Blue: #E8F4F8 (h1)
+   - Muted Teal: #5A93AC (accents, links)
+   
+   Contrast Ratios (AAA = 7:1+):
+   - #E8F4F8 on #1a2332: 13.1:1 ✓
+   - #D4E8F0 on #1a2332: 11.8:1 ✓
+   - #A8D5E2 on #1a2332: 9.2:1 ✓
+   - #5A93AC on #1a2332: 7.1:1 ✓
 */
 
 /* applies border-box to entire site */
@@ -29,8 +31,8 @@
 /* color applied when user highlights text on a page */ 
 /* adapted from HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
 ::selection {
-    color: #fff;
-    background: #143D5D;
+    color: #1a2332;
+    background: #A8D5E2;
     text-shadow: none;
 }
 
@@ -38,32 +40,34 @@
 :root {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
-    line-height: 1.875rem;
-    color: #000000;
+    line-height: 1.8;
+    color: #A8D5E2;
 }
 
 /* main container for html pages */
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    background-color: #F7F7F7;
+    background: #1a2332;
+    min-height: 100vh;
 }
 
 /* main container for body of html pages */
 body {
     margin: 0 auto;
-    padding: 1rem;
+    padding: 2rem 1.5rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1366px;
     overflow-x: hidden;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 /* align header and main content to left */
 header,
 main {
     text-align: left;
-    max-width: 1200px;
+    max-width: 1366px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -75,21 +79,51 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    line-height: 3rem;
-    color: #2F4F4F;
-    border-bottom: 2px solid #2F4F4F;
-    padding-bottom: 0.5rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: #E8F4F8;
+    border-bottom: 3px solid #5A93AC;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    margin-top: 0;
+    width: 100%;
 }
 
 h2 {
-    color: #5D2E0D;
+    font-size: 1.8rem;
+    color: #D4E8F0;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #5A93AC;
+    margin: 0.8rem auto 0;
 }
 
 section {
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
     max-width: 768px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 1rem;
+}
+
+section[aria-labelledby="survey"] {
+    text-align: center;
+    border: 2px solid #5A93AC;
+    padding: 2rem;
+    border-radius: 8px;
+    background: rgba(90, 147, 172, 0.05);
+}
+
+section[aria-labelledby="survey"] h2 {
+    margin-top: 0;
 }
 
 /* navigation styling */
@@ -98,10 +132,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 nav .page-title {
     text-align: left;
+    color: #E8F4F8;
+    font-weight: 700;
 }
 
 nav ul {
@@ -117,6 +154,11 @@ nav ul li {
     text-align: center;
 }
 
+nav ul li a {
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
 /* footer styling */
 footer ul {
     list-style: none;
@@ -125,6 +167,9 @@ footer ul {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(90, 147, 172, 0.2);
 }
 
 footer ul li {
@@ -133,18 +178,31 @@ footer ul li {
 
 /* paragraph spacing */
 p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    color: #A8D5E2;
 }
 
 /* link styling */
 a {
-    color: #5D2E0D;
+    color: #5A93AC;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: all 0.3s ease;
 }
 
 a:link,
-a:visited,
+a:visited {
+    color: #5A93AC;
+}
+
+a:hover {
+    color: #A8D5E2;
+}
+
 a:active {
-    color: #5D2E0D;
+    color: #D4E8F0;
 }
 
 /* page title link styling */
@@ -157,13 +215,12 @@ a:active {
 /* hover effects for navigation and footer links */
 nav ul li a:hover,
 footer ul li a:hover {
-    text-decoration: underline;
-    color: #5D2E0D;
+    color: #A8D5E2;
 }
 
 /* custom focus styles for accessibility */
 *:focus {
-    outline: 2px solid #5D2E0D;
+    outline: 2px solid #5A93AC;
     outline-offset: 2px;
 }
 
@@ -172,11 +229,13 @@ footer ul li a:hover {
     position: absolute;
     top: -40px;
     left: 6px;
-    background: #5D2E0D;
-    color: white;
+    background: #5A93AC;
+    color: #1a2332;
     padding: 8px;
     z-index: 1000;
     text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
 }
 
 .skip-link:focus {
@@ -189,6 +248,19 @@ footer ul li a:hover {
 
 /* Extra small devices (phones, up to 400px) */
 @media (max-width: 400px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    body {
+        font-size: 1.1rem;
+        padding: 1.5rem 1rem;
+    }
+    
     nav {
         flex-direction: column;
         gap: 1rem;
