@@ -115,7 +115,6 @@ section {
 }
 
 section[aria-labelledby="survey"] {
-    text-align: center;
     border: 2px solid #5A93AC;
     padding: 2rem;
     border-radius: 8px;
@@ -181,6 +180,11 @@ p {
     margin-bottom: 1.25rem;
     line-height: 1.8;
     color: #A8D5E2;
+}
+
+/* center utility class */
+.center {
+    text-align: center;
 }
 
 /* link styling */
