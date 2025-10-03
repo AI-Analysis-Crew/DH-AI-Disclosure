@@ -78,7 +78,10 @@
 		<h1 id="introduction">Disclosing Generative AI Use in Digital Humanities Research</h1>
 
 		<header id="header">
+			<!-- Interactive Sankey diagram (hidden on mobile) -->
 			<div id="sankey-chart" style="width: 100%; height: 600px; margin: 2rem auto;"></div>
+			<!-- Static image fallback for mobile (hidden on desktop) -->
+			<img id="sankey-static" src="/png/sankey-diagram.png" alt="Sankey diagram showing survey responses about GenAI disclosure: necessity, degree, frequency, and whether disclosure was required or voluntary" />
 		</header>
 
 		<main aria-labelledby="introduction" id="main">
@@ -145,6 +148,17 @@
 			document.addEventListener('DOMContentLoaded', function() {
 				if (typeof Plotly !== 'undefined' && typeof renderSankeyDiagram === 'function') {
 					renderSankeyDiagram('sankey-chart');
+
+					// Re-render on window resize with debouncing
+					var resizeTimeout;
+					window.addEventListener('resize', function() {
+						clearTimeout(resizeTimeout);
+						resizeTimeout = setTimeout(function() {
+							if (document.getElementById('sankey-chart').style.display !== 'none') {
+								renderSankeyDiagram('sankey-chart');
+							}
+						}, 250);
+					});
 				} else {
 					console.error('Plotly or sankey data not loaded');
 				}
