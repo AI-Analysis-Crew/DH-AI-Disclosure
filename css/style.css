@@ -247,6 +247,46 @@ footer ul li a:hover {
 }
 
 /* ========================================
+   SANKEY DIAGRAM RESPONSIVE BEHAVIOR
+   ======================================== */
+
+/* Default: Show interactive diagram, hide static image */
+#sankey-chart {
+    display: block;
+}
+
+#sankey-static {
+    display: none;
+}
+
+/* Below 600px: Hide interactive, show static image */
+@media (max-width: 600px) {
+    #sankey-chart {
+        display: none;
+    }
+
+    #sankey-static {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 2rem auto;
+    }
+}
+
+/* Adjust height for medium screens */
+@media (min-width: 601px) and (max-width: 768px) {
+    #sankey-chart {
+        height: 400px !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    #sankey-chart {
+        height: 500px !important;
+    }
+}
+
+/* ========================================
    RESPONSIVE BREAKPOINTS
    ======================================== */
 
