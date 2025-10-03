@@ -228,6 +228,20 @@ footer ul li a:hover {
     outline-offset: 2px;
 }
 
+/* email link styling */
+a.email {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-left: 0.35rem;
+}
+
+a.email::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f0e0";
+    margin-left: 0.5rem;
+}
+
 /* skip to content link for accessibility */
 .skip-link {
     position: absolute;
