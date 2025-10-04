@@ -65,11 +65,16 @@ body {
 
 /* align header and main content to left */
 header,
-main {
+main,
+figure {
     text-align: left;
     max-width: 1366px;
     margin-left: auto;
     margin-right: auto;
+}
+
+figure {
+    margin: 0 auto;
 }
 
 /* headings use Noto Serif font */
@@ -242,6 +247,7 @@ a.email {
     font-size: 0.9rem;
     text-transform: uppercase;
     margin-left: 0.35rem;
+    font-weight: 600;
 }
 
 a.email::after {
