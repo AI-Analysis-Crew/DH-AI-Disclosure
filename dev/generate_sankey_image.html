@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Sankey Diagram Image</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #f5f5f5;
+        }
+        #sankey-container {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 2rem 0;
+        }
+        .status {
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generate Sankey Diagram Static Image</h1>
+
+    <div class="info">
+        <p><strong>Instructions:</strong></p>
+        <ol>
+            <li>Click the "Generate Image" button below</li>
+            <li>The image will automatically download as "sankey-diagram.png"</li>
+            <li>Move the downloaded file to the /png/ directory</li>
+        </ol>
+    </div>
+
+    <button onclick="generateImage()">Generate Image</button>
+
+    <div id="status"></div>
+    <div id="sankey-container"></div>
+
+    <script src="js/sankey_data.js"></script>
+    <script>
+        // Render the diagram first
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof Plotly !== 'undefined' && typeof sankeyData !== 'undefined' && typeof sankeyLayout !== 'undefined') {
+                Plotly.newPlot('sankey-container', sankeyData, sankeyLayout, {responsive: true});
+                document.getElementById('status').innerHTML = '<div class="info">Diagram rendered. Click "Generate Image" to download.</div>';
+            } else {
+                document.getElementById('status').innerHTML = '<div class="error">Error: Plotly or sankey data not loaded properly.</div>';
+            }
+        });
+
+        function generateImage() {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '<div class="info">Generating image...</div>';
+
+            // Generate image at 1200x600 resolution
+            Plotly.toImage('sankey-container', {
+                format: 'png',
+                width: 1200,
+                height: 600,
+                scale: 2
+            }).then(function(dataUrl) {
+                // Create download link
+                const link = document.createElement('a');
+                link.download = 'sankey-diagram.png';
+                link.href = dataUrl;
+                link.click();
+
+                statusDiv.innerHTML = '<div class="success">Image generated and downloaded successfully! Move it to the /png/ directory.</div>';
+            }).catch(function(error) {
+                statusDiv.innerHTML = '<div class="error">Error generating image: ' + error.message + '</div>';
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
