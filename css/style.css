@@ -41,7 +41,7 @@
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
     line-height: 1.8;
-    color: #A8D5E2;
+    color: #D4E8F0;
 }
 
 /* main container for html pages */
@@ -164,22 +164,31 @@ footer ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin-top: 4rem;
     padding-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
     border-top: 1px solid rgba(90, 147, 172, 0.2);
+    font-size: 1.2rem;
 }
 
 footer ul li {
     text-align: center;
 }
 
+footer ul li:not(:last-child)::after {
+    content: '|';
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
 /* paragraph spacing */
 p {
     margin-bottom: 1.25rem;
     line-height: 1.8;
-    color: #A8D5E2;
+    color: #D4E8F0;
 }
 
 /* center utility class */
