@@ -280,6 +280,16 @@ a.email::after {
 
 #sankey-static {
     display: none;
+    margin-bottom: 0;
+}
+
+.sankey-caption {
+    font-size: 1.1rem;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Below 992px: Hide interactive, show static image */
