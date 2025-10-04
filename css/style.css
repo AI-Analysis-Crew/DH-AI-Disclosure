@@ -244,7 +244,7 @@ footer ul li a:hover {
 
 /* email link styling */
 a.email {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     margin-left: 0.35rem;
     font-weight: 600;
@@ -294,7 +294,7 @@ a.email::after {
 }
 
 .sankey-caption {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-align: left;
     margin-top: 0;
     margin-bottom: 2rem;
