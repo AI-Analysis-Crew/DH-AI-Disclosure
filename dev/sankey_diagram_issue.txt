@@ -1,6 +1,1 @@
-● Reverted! The diagram is back to its original state. Unfortunately, the node position jumping at the 1227-1228px breakpoint is a known issue with
-  Plotly's Sankey diagram layout algorithm - it automatically recalculates positions based on available space, and there's no way to fully lock positions
-  without manually specifying them (which we just saw breaks the layout).
-
-  This is a limitation of Plotly's Sankey implementation. The jumping typically only occurs at specific breakpoints and doesn't affect the overall data
-  visualization or readability.
+Unfortunately, the node position jumping (e.g., the 1227-1228px breakpoint) is a known issue with Plotly's Sankey diagram layout algorithm - it automatically recalculates positions based on available space, and there's no way to fully lock positions without manually specifying them which, unfortunatley, breaks the layout. This is a limitation of Plotly's Sankey implementation. The jumping typically only occurs at specific breakpoints and doesn't affect the overall data visualization or readability.
