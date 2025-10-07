@@ -169,6 +169,7 @@ footer ul {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 4rem;
@@ -181,6 +182,7 @@ footer ul {
 
 footer ul li {
     text-align: center;
+    white-space: nowrap;
 }
 
 footer ul li:not(:last-child)::after {
