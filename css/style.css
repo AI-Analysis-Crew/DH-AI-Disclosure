@@ -95,10 +95,10 @@ h1 {
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 2.15rem;
     color: #D4E8F0;
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
     position: relative;
 }
 
@@ -111,23 +111,76 @@ h2::after {
     margin: 0.8rem auto 0;
 }
 
+h3 {
+    font-size: 1.8rem;
+    color: #D4E8F0;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+    color: #D4E8F0;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* horizontal rule styling */
+hr {
+    border: none;
+    border-top: 2px solid #5A93AC;
+    margin: 3rem auto;
+    max-width: 850px;
+}
+
 section {
     margin-bottom: 3.5rem;
-    max-width: 768px;
+    max-width: 850px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 1rem;
 }
 
-section[aria-labelledby="survey"] {
+section[aria-labelledby="survey"],
+section[aria-labelledby="survey-box"] {
     border: 2px solid #5A93AC;
-    padding: 2rem;
+    padding: 1.25rem 2rem;
     border-radius: 8px;
     background: rgba(90, 147, 172, 0.05);
 }
 
-section[aria-labelledby="survey"] h2 {
+section[aria-labelledby="survey"] h2,
+section[aria-labelledby="survey-box"] h3 {
     margin-top: 0;
+}
+
+/* Contents box styling */
+.contents-box {
+    border: 2px solid #5A93AC;
+    padding: 1.25rem 2rem;
+    border-radius: 8px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+}
+
+.contents-box h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.contents-box ol {
+    text-align: left;
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+/* Desktop: contents box at half width */
+@media (min-width: 768px) {
+    .contents-box {
+        max-width: 425px;
+    }
 }
 
 /* navigation styling */
@@ -160,6 +213,7 @@ nav ul li {
 
 nav ul li a {
     font-weight: 500;
+    font-size: 1.2rem;
     transition: all 0.3s ease;
 }
 
