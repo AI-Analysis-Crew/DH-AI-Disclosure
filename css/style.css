@@ -259,7 +259,7 @@ a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 a:link,
@@ -269,6 +269,8 @@ a:visited {
 
 a:hover {
     color: #A8D5E2;
+    outline: 2px solid white;
+    outline-offset: 2px;
 }
 
 a:active {
