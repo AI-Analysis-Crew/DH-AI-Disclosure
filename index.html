@@ -148,6 +148,16 @@
 						.catch(error => console.error('Error loading include:', error));
 				});
 
+				// Add scroll detection for nav border
+				var navElement = document.querySelector('[data-include="nav"]');
+				window.addEventListener('scroll', function() {
+					if (window.scrollY > 200) {
+						navElement.classList.add('scrolled');
+					} else {
+						navElement.classList.remove('scrolled');
+					}
+				});
+
 				// Load scripts.js after DOM is ready
 				// loadScript('/js/scripts.js?vers=001');
 			});

@@ -105,10 +105,10 @@ h2 {
 h2::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 80px;
     height: 3px;
     background: #5A93AC;
-    margin: 0.8rem auto 0;
+    margin: 0.5rem auto 0;
 }
 
 h3 {
@@ -116,13 +116,25 @@ h3 {
     color: #D4E8F0;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
+    position: relative;
+}
+
+h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 6 Q 20 0, 40 6 Q 60 12, 80 6' stroke='%235A93AC' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    margin: 0.5rem auto 0;
 }
 
 h4 {
     font-size: 1.4rem;
     color: #D4E8F0;
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
+    text-align: left;
 }
 
 /* horizontal rule styling */
@@ -170,6 +182,11 @@ section[aria-labelledby="survey-box"] h3 {
     font-size: 1.5rem;
 }
 
+.contents-box h3::after {
+    width: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 6 Q 12.5 0, 25 6 Q 37.5 12, 50 6' stroke='%235A93AC' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+}
+
 .contents-box ol {
     text-align: left;
     margin: 0;
@@ -184,12 +201,42 @@ section[aria-labelledby="survey-box"] h3 {
 }
 
 /* navigation styling */
+[data-include="nav"] {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a2332;
+    z-index: 100;
+    padding: 0.75rem 2.5rem;
+    width: 100%;
+    max-width: 1366px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+}
+
+[data-include="nav"].scrolled {
+    border-bottom-color: white;
+}
+
+/* Reduce nav padding on smaller screens below 768px */
+@media (max-width: 767px) {
+    [data-include="nav"] {
+        padding: 0.75rem 1rem;
+    }
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+}
+
+/* Add spacing for fixed nav */
+h1 {
+    margin-top: 4.5rem !important;
 }
 
 nav .page-title {
@@ -374,21 +421,32 @@ a.email::after {
    RESPONSIVE BREAKPOINTS
    ======================================== */
 
+/* Mobile devices (up to 767px) */
+@media (max-width: 767px) {
+    section {
+        padding: 0 0.5rem;
+    }
+}
+
 /* Extra small devices (phones, up to 400px) */
 @media (max-width: 400px) {
     h1 {
         font-size: 2rem;
     }
-    
+
     h2 {
         font-size: 1.5rem;
     }
-    
+
     body {
         font-size: 1.1rem;
         padding: 1.5rem 1rem;
     }
-    
+
+    section {
+        padding: 0 0.5rem;
+    }
+
     nav {
         flex-direction: column;
         gap: 1rem;
@@ -412,25 +470,35 @@ a.email::after {
 
 /* Small devices (phones, 480px and up) */
 @media (min-width: 480px) {
-
+    body {
+        padding: 1.5rem 1.5rem;
+    }
 }
 
 /* Small to medium devices (large phones/small tablets, 600px and up) */
 @media (min-width: 600px) {
-
+    body {
+        padding: 1.5rem 2rem;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
+    body {
+        padding: 1.5rem 2.5rem;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
+    body {
+        padding: 1.5rem 3rem;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+    body {
+        padding: 1.5rem 4rem;
+    }
 }
